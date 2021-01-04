@@ -52,8 +52,7 @@ class SweetSheet {
             Container(
               width: double.infinity,
               color: color.main,
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 24.0, vertical: 24.0),
+              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 24.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -72,7 +71,7 @@ class SweetSheet {
               ),
             ),
             Container(
-              padding: const EdgeInsets.all(8.0),
+              padding: _getPaddingActions(context),
               color: color.accent,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -96,10 +95,7 @@ class SweetSheet {
                 children: <Widget>[
                   Expanded(
                     child: DefaultTextStyle(
-                        style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontFamily: 'circular'),
+                        style: TextStyle(fontSize: 18, color: Colors.white, fontFamily: 'circular'),
                         child: description),
                   ),
                   SizedBox(
@@ -137,6 +133,14 @@ class SweetSheet {
     }
 
     return actions;
+  }
+
+  bool _hasNotch(context) => MediaQuery.of(context).viewPadding.bottom > 0;
+
+  EdgeInsetsGeometry _getPaddingActions(BuildContext context) {
+    double defaultPadding = 8;
+    double bottomPadding = _hasNotch(context) ? 16 : 8;
+    return EdgeInsets.only(top: defaultPadding, left: defaultPadding, right: defaultPadding, bottom: bottomPadding);
   }
 }
 
