@@ -41,7 +41,6 @@ class SweetSheet {
     @required SweetSheetAction positive,
     SweetSheetAction negative,
     IconData icon,
-    Radius borderRadius = Radius.zero,
   }) {
     showModalBottomSheet(
       context: context,
@@ -52,11 +51,8 @@ class SweetSheet {
           children: <Widget>[
             Container(
               width: double.infinity,
+              color: color.main,
               padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 24.0),
-              decoration: BoxDecoration(
-                color: color.main,
-                borderRadius: BorderRadius.all(borderRadius),
-              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
