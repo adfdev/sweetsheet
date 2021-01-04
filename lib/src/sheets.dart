@@ -135,7 +135,8 @@ class SweetSheet {
     return actions;
   }
 
-  bool _hasNotch(context) => MediaQuery.of(context).viewPadding.bottom > 0;
+  bool _hasNotch(context) =>
+      MediaQuery.of(context).viewPadding.top > 0 || MediaQuery.of(context).viewPadding.bottom > 0;
 
   EdgeInsetsGeometry _getPaddingActions(BuildContext context) {
     double defaultPadding = 8;
