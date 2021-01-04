@@ -95,7 +95,11 @@ class SweetSheet {
                 children: <Widget>[
                   Expanded(
                     child: DefaultTextStyle(
-                        style: TextStyle(fontSize: 18, color: Colors.white, fontFamily: 'circular'),
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
+                          fontFamily: 'circular',
+                        ),
                         child: description),
                   ),
                   SizedBox(
