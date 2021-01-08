@@ -41,10 +41,12 @@ class SweetSheet {
     @required SweetSheetAction positive,
     SweetSheetAction negative,
     IconData icon,
+    Color backgroundColor,
   }) {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
+      backgroundColor: backgroundColor,
       builder: (BuildContext context) {
         return Column(
           mainAxisSize: MainAxisSize.min,
